@@ -5,6 +5,8 @@ con = sqlite3.connect("tutorial.db")
 
 # create a table
 
+
+
 # create a second table with keys referencing the first 
 
 

@@ -1,7 +1,10 @@
 import requests 
-import webbrowser
+# import webbrowser
 
-for x in range(10):
-    r = requests.get("https://api.thecatapi.com/v1/images/search")
-    url = r.json()[0]['url']
-    webbrowser.open(url)
+url = 'https://dummyjson.com/todos'
+data = requests.get(url).json()['todos']
+
+for item in data: 
+    del item['userId']
+    print(item)
+    # another request ot another service 
