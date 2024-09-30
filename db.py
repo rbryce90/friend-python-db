@@ -57,8 +57,4 @@ cur.execute("""
 """)
 con.commit()
 
-
-
-
-
 print('The End')
