@@ -33,21 +33,29 @@ cur.execute("""
 con.commit()
 
 # Read
-
 res = cur.execute("""
     Select * from users
 """)
 
-print(res.fetchall())
+print('before update: ', res.fetchall())
 
 # Update
 cur.execute("""
-                  Update users set last_name = 'yells' where first_name = 'Danielle'
-                  """)
+    Update users set last_name = 'yells' where first_name = 'Danielle'
+    """)
 con.commit()
+res = cur.execute("""
+    Select * from users
+""")
 
-print(res.fetchall())
+print("After update: ", res.fetchall())
+
 # Delete
+
+cur.execute(""" 
+    delete from users;
+""")
+con.commit()
 
 
 
